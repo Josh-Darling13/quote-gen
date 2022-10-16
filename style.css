@@ -46,6 +46,26 @@ body {
   font-style: italic;
 }
 
+.button-contianer{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+/*
+#quote-containter{}
+#quote-author{}
+#author{}
+.twitter-button
+#twitter{}
+.fab fa-twitter{}
+#new-quote{}
+*/
+
+
+
 /* Media Query: Tablet  or smaller*/
 
 @media screen and (max-width: 1000px){
@@ -61,16 +81,3 @@ body {
 }
 
 
-/*
-#quote-containter{}
-
-
-
-#quote-author{}
-#author{}
-.button-contianer{}
-.twitter-button
-#twitter{}
-.fab fa-twitter{}
-#new-quote{}
-*/
