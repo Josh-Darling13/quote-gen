@@ -5,25 +5,21 @@ const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
 
-// show loading
-function loading(){
+function showLoadingSpinner(){
     quoteContainer.hidden = true;
     loader.hidden = false;
-
 }
 
-// hide Loading
-function complete(){
+function hideLoadingSpinner(){
     if(!loader.hidden){
         quoteContainer.hidden = false;
         loader.hidden = true;
     }
 }
 
-
 //get quote from API
 async function getQuote(){
-    loading();
+    showLoadingSpinner();
     const proxyURL = 'https://pure-sierra-31657.herokuapp.com/';
     const urlAPI = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
     try{
@@ -42,13 +38,11 @@ async function getQuote(){
         }
         authorText.innerText = data.quoteAuthor;
         //stop loader show quote
-        complete();
+        hideLoadingSpinner();
     }catch(error){
-        getQuote();
+        console.log(error);
     }
 }
-
-//twitter function
 
 function tweetQuote(){
     const quote = quoteText.innerText;
